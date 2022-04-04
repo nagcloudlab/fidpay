@@ -1,6 +1,13 @@
-package com.example.model;
+package com.example.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "accounts")
 public class Account {
+    @Id
     private String number;
     private double balance;
 

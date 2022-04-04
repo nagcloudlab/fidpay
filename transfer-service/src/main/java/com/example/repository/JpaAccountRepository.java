@@ -1,24 +1,25 @@
 package com.example.repository;
 
-import com.example.model.Account;
-import org.apache.log4j.Logger;
+import com.example.entity.Account;
+import org.springframework.stereotype.Component;
 
-public class JpaAccountRepository implements AccountRepository {
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
-    private static final Logger logger=Logger.getLogger("ts");
+@Component("jpaAccountRepository")
+public class JpaAccountRepository implements AccountRepository{
 
-    public JpaAccountRepository() {
-        logger.info("JpaAccountRepository instance created..");
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    @Override
+    public Account load(String accNumber) {
+        return entityManager.find(Account.class,accNumber);
     }
 
-    public Account load(String accNumber){
-        logger.info("loading account - "+accNumber);
-        // TODO:
-        return new Account(accNumber,1000.00);
+    @Override
+    public Account update(Account account) {
+        return entityManager.merge(account);
     }
-    public Account update(Account account){
-        logger.info("updating account - "+account.getNumber());
-        // TODO:
-        return account;
-    }
+
 }

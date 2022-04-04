@@ -1,20 +1,27 @@
 package com.example.service;
 
-import com.example.model.Account;
+import com.example.entity.Account;
 import com.example.repository.AccountRepository;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
-// SOLID
+@Component("transferService")
 public class TransferServiceImpl implements TransferService{
 
     private static final Logger logger=Logger.getLogger("ts");
     private AccountRepository accountRepository;
 
+    @Autowired
     public TransferServiceImpl(AccountRepository accountRepository) {
         this.accountRepository=accountRepository;
         logger.info("TransferService instance created..");
     }
 
+    @Transactional(
+            transactionManager = "transactionManager"
+    )
     public boolean transfer(double amount, String fromAccNumber, String toAccNumber) {
         logger.info("transfer initiated.");
         Account a1 = accountRepository.load(fromAccNumber);
