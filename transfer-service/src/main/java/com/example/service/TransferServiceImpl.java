@@ -30,6 +30,20 @@ public class TransferServiceImpl implements TransferService{
         a2.setBalance(a2.getBalance() + amount);
         accountRepository.update(a1);
         accountRepository.update(a2);
+
+        /*
+
+        Home-Work:
+
+            txn-history
+
+            id
+            type
+            timestamp
+            amount
+
+         */
+
         logger.info("transfer completed.");
         return true;
     }
