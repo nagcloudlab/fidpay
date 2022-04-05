@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/fidpay.iml" filepath="$PROJECT_DIR$/.idea/fidpay.iml" />
-      <module fileurl="file://$PROJECT_DIR$/transfer-service-v1/transfer-service.iml" filepath="$PROJECT_DIR$/transfer-service-v1/transfer-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/transfer-service/transfer-service.iml" filepath="$PROJECT_DIR$/transfer-service/transfer-service.iml" />
     </modules>
   </component>
 </project>

@@ -24,9 +24,9 @@ public class TransferServiceConfiguration {
     public DataSource dataSource(){
         BasicDataSource basicDataSource=new BasicDataSource();
         basicDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        basicDataSource.setUrl("jdbc:mysql://localhost:3306/bankdb");
-        basicDataSource.setUsername("root");
-        basicDataSource.setPassword("root123");
+        basicDataSource.setUrl("jdbc:mysql://localhost:3306/bank-db");
+        basicDataSource.setUsername("user");
+        basicDataSource.setPassword("pwd");
         return  basicDataSource;
     }
     private Properties additionalProperties() {

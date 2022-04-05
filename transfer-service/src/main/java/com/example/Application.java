@@ -15,7 +15,7 @@ public class Application {
 
         // 2. use phase
         TransferService transferService=applicationContext.getBean(TransferService.class);
-        transferService.transfer(100.00, "1", "2");
+        transferService.transfer(1000.00, "1", "2");
 
         // 3. destroy phase
         transferService = null;
