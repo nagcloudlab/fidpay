@@ -2,11 +2,12 @@ package com.example.repository;
 
 import com.example.entity.Account;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-@Component("jpaAccountRepository")
+@Repository("jpaAccountRepository")
 public class JpaAccountRepository implements AccountRepository{
 
     @PersistenceContext

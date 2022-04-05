@@ -11,6 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="transfer-service" target="11" />
+      <module name="transfer-service-v1" target="11" />
       <module name="transfer-service-v1 (1)" target="11" />
     </bytecodeTargetLevel>
   </component>
