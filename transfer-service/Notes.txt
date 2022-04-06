@@ -70,4 +70,21 @@ REST ( REpresentational State Transfer )
 
     ---------------------------------------------------------------------------------
 
+    Ex-2
 
+    todos rest-api application with spring boot
+
+
+        todo={
+            id:number
+            title:string
+            completed:boolean
+        }
+
+        - create new todo
+        - get all todos
+        - get one todo
+        - delete one todo
+        - update todo ( title , completd )
+
+    -------------------------------------------------------------------------

@@ -10,20 +10,15 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service("transferService")
-public class TransferServiceImpl implements TransferService{
+public class TransferServiceImpl implements TransferService {
 
     private AccountRepository accountRepository;
+    private SomeService someService;
 
-    @Autowired
-    public TransferServiceImpl(AccountRepository accountRepository) {
-        this.accountRepository=accountRepository;
+    public TransferServiceImpl(AccountRepository accountRepository, SomeService someService) {
+        this.accountRepository = accountRepository;
+        this.someService = someService;
     }
-
-    // ACIDD principles
-    // Atomic
-    // Consistency
-    // Isolation
-    // Durability
 
     @Transactional(
             transactionManager = "transactionManager",
@@ -37,12 +32,13 @@ public class TransferServiceImpl implements TransferService{
     public boolean transfer(double amount, String fromAccNumber, String toAccNumber) {
         Account a1 = accountRepository.load(fromAccNumber);
         Account a2 = accountRepository.load(toAccNumber);
-        if(!(a1.getBalance()>=amount))
+        if (!(a1.getBalance() >= amount))
             throw new AccountBalanceException("no enough balance");
         a1.setBalance(a1.getBalance() - amount);
         a2.setBalance(a2.getBalance() + amount);
         accountRepository.update(a1);
         accountRepository.update(a2);
+        someService.someMethod();
         return true;
     }
 
