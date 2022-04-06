@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Import;
 @Configuration
 //@Import(value={FidypayAutoConfiguration.class})
 @EnableAutoConfiguration
-@ComponentScan(basePackages = {"com.example"})
+@ComponentScan(basePackages = {"com.example","com.fidypay"})
 public class Application {
     public static void main(String[] args) {
         ConfigurableApplicationContext applicationContext=
