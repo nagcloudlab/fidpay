@@ -67,12 +67,5 @@ public class TransferServiceConfiguration {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
-    @Bean
-    public ViewResolver viewResolver() {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/views/");
-        viewResolver.setSuffix(".jsp");
-        return viewResolver;
-    }
 
 }
