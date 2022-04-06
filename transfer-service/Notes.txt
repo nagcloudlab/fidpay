@@ -50,3 +50,24 @@ REST ( REpresentational State Transfer )
         - Spring MVC
 
     -----------------------------------------------------------------------------
+
+
+    challenges while developing backend services using spring
+
+
+    => finding right/version maven-dependency to the requirement
+    => writing default/best spring configuration based spring-project
+
+
+    solution:
+
+        => use 'spring-boot'
+
+        what is spring boot ?
+
+            => spring's auto configuration tool
+
+
+    ---------------------------------------------------------------------------------
+
+

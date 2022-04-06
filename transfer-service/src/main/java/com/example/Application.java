@@ -1,23 +1,23 @@
 package com.example;
 
-import com.example.config.TransferServiceConfiguration;
-import com.example.service.TransferService;
+import com.fidypay.FidypayAutoConfiguration;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
+@Configuration
+//@Import(value={FidypayAutoConfiguration.class})
+@EnableAutoConfiguration
+@ComponentScan(basePackages = {"com.example"})
 public class Application {
     public static void main(String[] args) {
-        //1. init / booting phase
-        ConfigurableApplicationContext applicationContext =
-                new AnnotationConfigApplicationContext(TransferServiceConfiguration.class);
-        try {
-            // 2. use phase
-            TransferService transferService = applicationContext.getBean(TransferService.class);
-            transferService.transfer(1000.00, "1", "2");
+        ConfigurableApplicationContext applicationContext=
+        SpringApplication.run(Application.class, args);
 
-        } catch (Exception e) {
-            System.out.println("ex-" + e.getMessage());
-        }
-        // 3. destroy phase
+        String fidypayBean=applicationContext.getBean("fidypay",String.class);
+        System.out.println(fidypayBean);
     }
 }
