@@ -8,7 +8,15 @@ spring:
     username: user
     password: pwd
 
+  profiles:
+    active: fidypay,prod
+
 fidypay:
+  transfer:
+    type: imps
   greet:
-    message: ola
+    message: hello-DEV
     messages: hello,hi,hey,hoi
+
+
+

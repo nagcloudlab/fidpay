@@ -8,5 +8,6 @@ com/fidypay/FidypayAutoConfiguration.class
 com/example/Application.class
 com/example/service/AccountBalanceException.class
 com/fidypay/FidypayGreetController.class
+com/example/service/SomeService.class
 com/example/web/payload/TransferRequest.class
 com/example/web/TransferController.class

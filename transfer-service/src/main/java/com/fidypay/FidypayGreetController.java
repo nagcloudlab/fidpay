@@ -11,15 +11,23 @@ import java.util.stream.Collectors;
 @RestController
 public class FidypayGreetController {
 
-    @Value("${fidypay.greet.message:hello}")
-    private String message;
+//    @Value("${fidypay.greet.message:hello}")
+//    private String message;
+//
+//    @Value("${fidypay.greet.messages}")
+//    private List<String> messages;
 
-    @Value("${fidypay.greet.messages}")
-    private List<String> messages;
+    private FidypayGreetProperties fidypayGreetProperties;
+
+    public FidypayGreetController(FidypayGreetProperties fidypayGreetProperties) {
+        this.fidypayGreetProperties = fidypayGreetProperties;
+    }
+
 
     @RequestMapping(method = RequestMethod.GET,value = "/api/greet")
     public String doGreet(){
-        return message;
+        System.out.println(fidypayGreetProperties.getMessages());
+        return fidypayGreetProperties.getMessage();
     }
 
 }

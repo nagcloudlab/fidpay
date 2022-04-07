@@ -1,0 +1,7 @@
+
+
+fidypay:
+  greet:
+    message: ola
+    messages: message1,message2
+
