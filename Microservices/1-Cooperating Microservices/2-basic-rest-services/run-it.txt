@@ -1,0 +1,6 @@
+
+
+
+
+./gradlew build
+java -jar microservices/product-service/build/libs/*.jar &
