@@ -61,7 +61,7 @@ public class ProductServiceImpl implements ProductService {
 
     LOG.info("Will get product info for id={}", productId);
 
-    return repository.findByProductId(productId)
+    return repository.findByProductId(productId) // IO
       .switchIfEmpty(Mono.error(new NotFoundException("No product found for productId: " + productId)))
       .log(LOG.getName(), FINE)
       .map(e -> mapper.entityToApi(e))

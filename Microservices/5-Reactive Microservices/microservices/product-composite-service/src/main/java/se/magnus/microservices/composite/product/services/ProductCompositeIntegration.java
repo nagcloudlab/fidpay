@@ -91,7 +91,13 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
     String url = productServiceUrl + "/product/" + productId;
     LOG.debug("Will call the getProduct API on URL: {}", url);
 
-    return webClient.get().uri(url).retrieve().bodyToMono(Product.class).log(LOG.getName(), FINE).onErrorMap(WebClientResponseException.class, ex -> handleException(ex));
+    return webClient
+            .get()
+            .uri(url)
+            .retrieve()
+            .bodyToMono(Product.class)
+            .log(LOG.getName(), FINE)
+            .onErrorMap(WebClientResponseException.class, ex -> handleException(ex));
   }
 
   @Override

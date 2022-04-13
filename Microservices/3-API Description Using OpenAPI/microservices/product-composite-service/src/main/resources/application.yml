@@ -5,7 +5,6 @@ springdoc:
   pathsToMatch: /**
 
 api:
-
   common:
     version: 1.0.0
     title: Sample API
